@@ -11,7 +11,7 @@ You basically just donwload the sources, run them in Xcode and then you see the 
 
 # Screenshot
 
-![Screenshot](https://github.com/trenskow/ResumeForMacOS/blob/screenshot.png?raw=true)
+![Screenshot](https://github.com/trenskow/ResumeForMacOS/raw/main/screenshot.png?raw=true)
 
 # License
 
