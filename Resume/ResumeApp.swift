@@ -21,6 +21,7 @@ struct ResumeApp: App {
 		WindowGroup {
 			ScrollView {
 				self.content
+					.navigationTitle("Kristian Trenskow's Resume")
 					.environment(\.colorScheme, .light)
 					.foregroundStyle(.black)
 			}

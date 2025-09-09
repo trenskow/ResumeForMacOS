@@ -9,6 +9,10 @@ You basically just donwload the sources, run them in Xcode and then you see the 
 
 > The resume can be exported to PDF from the app.
 
+# Screenshot
+
+![Screenshot](https://github.com/trenskow/ResumeForMacOS/blob/screenshot.png?raw=true)
+
 # License
 
 © Copyright 2025 by Kristian Trenskow.
