@@ -11,6 +11,7 @@ extension Project {
 		switch self {
 		case .threeShape: return [.developer([.iOS])]
 		case .huligennem: return [.developer([.iOS])]
+		case .cph: return [.developer([.iOS])]
 		case .theBirds: return [.architect, .developer([.web(.svelte), .backend(.strapi)])]
 		case .finans: return [.developer([.iOS, .android])]
 		case .reliefV2: return [.developer([.iOS])]

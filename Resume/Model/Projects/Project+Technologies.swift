@@ -11,6 +11,7 @@ extension Project {
 		switch self {
 		case .threeShape: return [.metal, .swiftUI, .uiKit]
 		case .huligennem: return [.swiftUI]
+		case .cph: return [.swiftUI, .uiKit]
 		case .theBirds: return nil
 		case .finans: return [.swiftUI, .uiKit]
 		case .reliefV2: return [.swiftUI, .uiKit]

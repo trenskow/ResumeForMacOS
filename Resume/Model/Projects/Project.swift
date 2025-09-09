@@ -8,6 +8,7 @@
 enum Project: CaseIterable {
 	case threeShape
 	case huligennem
+	case cph
 	case theBirds
 	case finans
 	case reliefV2

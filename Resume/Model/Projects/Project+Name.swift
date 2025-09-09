@@ -14,6 +14,7 @@ extension Project {
 		case .auFind: return "AU Find"
 		case .auFindV2: return "AU Find 2"
 		case .bolig: return "Bolig"
+		case .cph: return "CPH"
 		case .drNyheder: return "DR Nyheder"
 		case .drTv: return "DR TV"
 		case .economic: return "e-conomic"

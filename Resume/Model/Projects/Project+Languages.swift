@@ -11,6 +11,7 @@ extension Project {
 		switch self {
 		case .threeShape: return [.swift, .c]
 		case .huligennem: return [.swift]
+		case .cph: return [.swift, .objectiveC]
 		case .theBirds: return [.typeScript, .javaScript]
 		case .finans: return [.swift, .kotlin]
 		case .reliefV2: return [.swift]

@@ -8,6 +8,7 @@
 enum Client {
 	case me
 	case threeShape
+	case copenhagenAirport
 	case danskeBank
 	case allerMedia
 	case dr

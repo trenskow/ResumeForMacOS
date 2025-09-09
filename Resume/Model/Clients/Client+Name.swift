@@ -11,6 +11,7 @@ extension Client {
 		switch self {
 		case .aarhusUniversity: return "Aarhus University"
 		case .allerMedia: return "Aller Media"
+		case .copenhagenAirport: return "Copenhagen Airport"
 		case .danskeBank: return "Danske Bank"
 		case .dr: return "DR"
 		case .economic: return "e-conomic"

@@ -17,6 +17,10 @@ extension Project {
 			HULiGENNEM is a podcast app for children. It is a publicly funded app in Denmark aimed to create content targeted children.
 			I was part of a team at Framna, who made this app come together extremely quickly!
 			"""
+		case .cph: return """
+			I was tasked with implementing a new shopping section in the app for Copenhagen Airport.
+			The app is one of those older apps where some features are still implemented in Objective-C. I introduced SwiftUI to the app for this new feature
+			"""
 		case .theBirds: return """
 			This is the first full website I ever did. I did both backend and frontend development.
 			The backend was a Strapi headless CMS, which the client uses to setup all content of the site. The site is comprised of a different component types that can be put together to make a page.

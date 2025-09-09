@@ -14,6 +14,7 @@ extension Project {
 		case .auFind: return .aarhusUniversity
 		case .auFindV2: return .aarhusUniversity
 		case .bolig: return .danskeBank
+		case .cph: return .copenhagenAirport
 		case .drTv: return .dr
 		case .drNyheder: return .dr
 		case .economic: return .economic

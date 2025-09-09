@@ -37,6 +37,7 @@ extension Project {
 		case .auFind: return .init(year: 2011, month: .january, durationMonths: 3)
 		case .auFindV2: return .init(year: 2016, month: .september, durationMonths: 3)
 		case .bolig: return .init(year: 2019, month: .april, durationMonths: 3)
+		case .cph: return .init(year: 2024, month: .july, durationMonths: 3)
 		case .drNyheder: return .init(year: 2015, month: .july, durationMonths: 3)
 		case .drTv: return .init(year: 2015, month: .october, durationMonths: 3)
 		case .economic: return .init(year: 2014, month: .october, durationMonths: 5)
