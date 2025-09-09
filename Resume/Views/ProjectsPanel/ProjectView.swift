@@ -54,6 +54,7 @@ struct ProjectView: View {
 				.frame(width: 108, alignment: .trailing)
 
 				Timeline()
+					.frame(maxHeight: .infinity)
 
 				VStack(
 					alignment: .leading,
@@ -142,8 +143,13 @@ struct ProjectView: View {
 
 				}
 				.padding(.vertical, 60)
+				.frame(
+					maxWidth: .infinity,
+					alignment: .leading)
 
 			}
+			.frame(
+				maxWidth: .infinity)
 
 		}
 	}

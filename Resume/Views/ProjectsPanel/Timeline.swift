@@ -59,6 +59,9 @@ struct Timeline: View {
 					width: 4)
 				.frame(
 					maxHeight: .infinity)
+				.fixedSize(
+					horizontal: true,
+					vertical: false)
 				.clipShape(
 					.rect(
 						topLeadingRadius: 2,
@@ -70,6 +73,8 @@ struct Timeline: View {
 					self.parts.contains(.bottom) ? Color.black : Color.clear
 				)
 		}
+		.frame(
+			maxHeight: .infinity)
 	}
 
 }

@@ -22,7 +22,7 @@ extension Project {
 			The backend was a Strapi headless CMS, which the client uses to setup all content of the site. The site is comprised of a different component types that can be put together to make a page.
 			The frontend is written entirely in Svelte 5 – with SvelteKit underneath. Svelte was an amazing experience to work with – having worked with also React, Svelte makes web development so much more exciting!
 			The design was done by DAY21. They did an amazing job and to be honest I think the usage of Svelte and their design really came through as an amazing result!
-			Visit: fugleværnsfonden.dk
+			Visit: fuglevaernsfonden.dk
 			"""
 		case .finans: return """
 			In winter of 2023/2024 I assisted Nykredit in gettin some designchanges implemented into their Finans iOS and Android app. The app was relative well maintained, so it was a relatively simple task.
@@ -32,7 +32,8 @@ extension Project {
 			"""
 		case .sdkV2: return """
 			From January 2023 through to March 2024 I was back at the SDK & Sound+ team at Jabra. This was the same team I had joined and stayed with for a year six years prior.
-			I was very happy to see, that the SDK I wrote back in 2017 was still in use, and I got to work on it again, which was a trip down memory lane. The current maintainers of the SDK used this time to pick my brain about background information on strange decisions made those years ago. So it was all in all a great experience.
+			I was very happy to see, that the SDK I wrote back in 2017 was still in use, and I got to work on it again – which was a trip down memory lane.
+			The current maintainers of the SDK used this time to pick my brain about background information on strange decisions made those years ago. So it was all in all a great experience.
 			Like the last time I was there, I also helped out on the Sound+ team.
 			"""
 		case .panacast: return """
@@ -80,12 +81,12 @@ extension Project {
 			"""
 		case .auEvacuate: return """
 			In winter/spring of 2017 I designed and developed an application for Aarhus University, which served the purpose of being a supplement to their existing evacuation infrastructure. As any big organisation they need a thorough emergency and evacuation plan, and they felt they lacked some reach.
-			They approached me with the idea of making an app, that could receive immediate notification, when an evacuation was acute. The goal was to make it available to as many employees and students as possible, as a means of communication in a situation where an evacuation was needed.
-			I designed the app, made the backend implementation in Node.js, designed and build the app for both iOS and Android – which was both natively build in Swift and Java.
+			They approached me with the idea of making an app, that could receive immediate notification, when an evacuation was acute. The goal was to make it available to as many employees and students as possible, as a means of communication in a situation where an evacuation was needed. I designed the app, made the backend implementation in Node.js, designed and build the app for both iOS and Android – which was both natively build in Swift and Java.
 			"""
 		case .auFindV2: return """
 			The first AU Find app was my very first app in 2011 - written for iOS 4. With the advent of iOS 10 it was apparent, that the app was in line for a very needed update — it wouldn’t even work on iOS 10.
-			The result was a complete rewrite of the old app. This time written in modern Swift 3, using Storyboards and last, but not least, Apple Watch support. The app is simple and strait forward, and so is the design — although the new design is much more in sync with the Aarhus University brand. Besides, it featured an Apple Watch extension, so users can find buildings directly on their watches.
+			The result was a complete rewrite of the old app. This time written in modern Swift 3, using Storyboards and last, but not least, Apple Watch support.
+			The app is simple and strait forward, and so is the design — although the new design is much more in sync with the Aarhus University brand. Besides, it featured an Apple Watch extension, so users can find buildings directly on their watches.
 			Also it was a very interesting experience rewriting an app I wrote five years ago — to see the personal advancements I’ve made in both the technological and the design aspects of my skills in five years.
 			"""
 		case .taxiFix: return """
@@ -99,20 +100,18 @@ extension Project {
 			I did some coding, but primarily my role was almost purely technical management.
 			"""
 		case .drNyheder: return """
-			The national danish broadcaster needed an urgent rewrite of their news app. Their push notification provider - which was used for breaking news - had deprecated the API used and the source code for the app was so old that it did not even compile. Many third party libraries in use were no longer existing.
+			The national danish broadcaster needed an urgent rewrite of their news app. Their push notification provider - which was used for breaking news - had deprecated the API used.
 			Therefore it was decided to do a rewrite - which I did in two weeks. The product design was already in place, and this was just a pure rewrite of the existing application.
 			I did, though, change some things as I did slight changes as moving the menu from right to left and implemented the ability for the news overview to display marketing banners.
 			"""
 		case .economic: return """
 			The work I did for e-conomic International A/S. We were three developers, a designer and a product owner - organized in a scrum team.
-			e-conomic already had an app prior to this one. It was very poor - made by a Macedonian company - and the decision was made to in-source the development - and start development from scratch. The old app was pulled from the App Store.
-			When I joined the team they already had an almost functional app. It had some issues in regards to user experience and performance - which I, as a senior developer, helped them overcome.
+			e-conomic already had an app prior to this one. It was very poor - made by a Macedonian company - and the decision was made to in-source the development - and start development from scratch. The old app was pulled from the App Store. When I joined the team they already had an almost functional app. It had some issues in regards to user experience and performance - which I, as a senior developer, helped them overcome.
 			The app communicated using e-conomic’s own REST interface and with JSON as the data format.
 			"""
 		case .one: return """
-			The KREAFUNK ONE app is a simple, beautiful app that combines your iPhone’s music, Spotify and podcasts into a single slick app. You can combine tracks and create queues from any of the previously mentioned sources - with gapless playback.
-			It is created for the Danish speaker company KREAFUNK to work in combination with their speakers. They wanted a single app that could create a seamless experience for their customers. But it is not just for users of KREAFUNK products - it can be used with any one who wants a simple audio player for all their musical needs.
-			The app is designed and developed by me - build around module structure internally that makes it easy to add future audio sources.
+			The KREAFUNK ONE app is a simple, beautiful app that combines your iPhone’s music, Spotify and podcasts into a single slick app. You can combine tracks and create queues from any of the previously mentioned sources - with gapless playback. It is created for the Danish speaker company KREAFUNK to work in combination with their speakers.
+			They wanted a single app that could create a seamless experience for their customers. But it is not just for users of KREAFUNK products - it can be used with any one who wants a simple audio player for all their musical needs.
 			"""
 		case .spotable: return """
 			Spotable is a Spotify client for macOS, that is build using the Spotify iOS SDK. It is not an official Spotify client, but it uses the official SDK to communicate with Spotify.

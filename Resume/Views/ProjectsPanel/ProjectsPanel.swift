@@ -72,8 +72,10 @@ struct ProjectsPanel: View {
 
 					}
 					.padding(.vertical, 60)
+					.frame(maxWidth: .infinity)
 
 				}
+				.frame(maxWidth: .infinity)
 
 			}
 			.padding(.vertical, 60)

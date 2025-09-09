@@ -9,30 +9,29 @@ import SwiftUI
 
 struct Paragraph: View {
 
-	let text: [String]
+	let text: AttributedString
 
 	init(
 		text: String
 	) {
-		self.text = text
-			.components(separatedBy: "\n")
+		var attributedText = AttributedString(text
+			.replacingOccurrences(of: "\n", with: "\n\n"))
+		attributedText.foregroundColor = .black
+		self.text = attributedText
 	}
 
 	var body: some View {
-		VStack(
-			alignment: .leading,
-			spacing: 20
-		) {
-			ForEach(self.text, id: \.self) { line in
-				Text(line)
-					.multilineTextAlignment(.leading)
-			}
-		}
-		.font(
-			Font.resume.workSans
-				.sized(
-					14,
-					weight: .regular))
+		Text(self.text)
+			.multilineTextAlignment(.leading)
+			.fixedSize(
+				horizontal: false,
+				vertical: true)
+			.font(
+				Font.resume.workSans
+					.sized(
+						14,
+						weight: .regular))
+			.foregroundStyle(.black)
 	}
 
 }

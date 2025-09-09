@@ -11,7 +11,9 @@ import UniformTypeIdentifiers
 @main
 struct ResumeApp: App {
 
-	private var content: some View {
+	@State var renderer: Renderer<ContentView>?
+
+	private var content: ContentView {
 		ContentView()
 	}
 
@@ -19,6 +21,8 @@ struct ResumeApp: App {
 		WindowGroup {
 			ScrollView {
 				self.content
+					.environment(\.colorScheme, .light)
+					.foregroundStyle(.black)
 			}
 		}
 		.commands {
@@ -36,12 +40,11 @@ struct ResumeApp: App {
 							  let url = savePanel.url
 						else { return }
 
-						do {
-							try self.content.render(into: url)
-						}
-						catch {
-							print("Failed to render PDF: \(error)")
-						}
+						self.renderer = Renderer(
+							url: url,
+							content: self.content)
+
+						self.renderer?.render()
 
 					}
 				}
