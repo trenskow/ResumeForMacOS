@@ -11,19 +11,15 @@ import UniformTypeIdentifiers
 @main
 struct ResumeApp: App {
 
-	@State var renderer: Renderer<ContentView>?
-
-	private var content: ContentView {
+	private var content: some View {
 		ContentView()
+			.foregroundStyle(.black)
 	}
 
 	var body: some Scene {
-		WindowGroup {
+		Window("Kristian Trenskow's Resume", id: "main") {
 			ScrollView {
 				self.content
-					.navigationTitle("Kristian Trenskow's Resume")
-					.environment(\.colorScheme, .light)
-					.foregroundStyle(.black)
 			}
 		}
 		.commands {
@@ -41,11 +37,11 @@ struct ResumeApp: App {
 							  let url = savePanel.url
 						else { return }
 
-						self.renderer = Renderer(
-							url: url,
-							content: self.content)
+						await self.content
+							.saveAsPDF(
+								url: url)
 
-						self.renderer?.render()
+						NSWorkspace.shared.open(url)
 
 					}
 				}
