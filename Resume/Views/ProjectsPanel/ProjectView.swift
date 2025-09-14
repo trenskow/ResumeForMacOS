@@ -71,6 +71,7 @@ struct ProjectView: View {
 						HStack(
 							spacing: 3
 						) {
+
 							Text("ME")
 								.font(.resume.workSans
 									.sized(
@@ -78,6 +79,7 @@ struct ProjectView: View {
 										weight: .bold))
 							Text("|")
 							Text(self.project.roles.map { $0.name }.joined(separator: " | ") )
+
 						}
 						.font(.resume.workSans
 							.sized(
@@ -100,13 +102,27 @@ struct ProjectView: View {
 
 							VStack(
 								alignment: .leading,
-								spacing: 0
+								spacing: 15
 							) {
-								if self.project.technologies != nil {
-									Text("Techonolgies".uppercased())
+
+								VStack(
+									alignment: .leading,
+									spacing: 0
+								) {
+
+									if self.project.technologies != nil {
+										Text("Techonolgies".uppercased())
+									}
+
+									Text("Languages".uppercased())
+									Text("Platforms".uppercased())
+
 								}
-								Text("Languages".uppercased())
-								Text("Platforms".uppercased())
+
+								if self.project.contractor != nil {
+									Text("Contractor".uppercased())
+								}
+
 							}
 							.font(.resume.workSans
 								.sized(
@@ -115,21 +131,36 @@ struct ProjectView: View {
 
 							VStack(
 								alignment: .leading,
-								spacing: 0
+								spacing: 15
 							) {
-								if let technologies = self.project.technologies {
-									Text(
-										technologies
-											.map { $0.name }
-											.joined(separator: " | "))
+
+								VStack(
+									alignment: .leading,
+									spacing: 0
+								) {
+
+									if let technologies = self.project.technologies {
+										Text(
+											technologies
+												.map { $0.name }
+												.joined(separator: " | "))
+									}
+
+									Text(self.project
+										.languages
+										.map { $0.name }
+										.joined(separator: " | "))
+
+									Text(self.project
+										.platforms
+										.joined(separator: " | "))
+
 								}
-								Text(self.project
-									.languages
-									.map { $0.name }
-									.joined(separator: " | "))
-								Text(self.project
-									.platforms
-									.joined(separator: " | "))
+
+								if let contractor = self.project.contractor {
+									Text(contractor.name)
+								}
+
 							}
 							.font(.resume.workSans
 								.sized(
