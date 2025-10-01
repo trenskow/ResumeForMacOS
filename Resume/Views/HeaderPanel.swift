@@ -34,9 +34,26 @@ struct HeaderPanel: View {
 				HStack(
 					spacing: 0
 				) {
-					Image.resume.myFace
-						.resizable()
-						.aspectRatio(contentMode: .fit)
+					ZStack {
+						Image.resume.myFace
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.mask(
+								LinearGradient(
+									stops: [
+										.init(
+											color: .black,
+											location: 0.0),
+										.init(
+											color: .black,
+											location: 0.95),
+										.init(
+											color: .clear,
+											location: 1.0)
+									],
+									startPoint: .leading,
+									endPoint: .trailing))
+					}
 				}
 
 				VStack(
