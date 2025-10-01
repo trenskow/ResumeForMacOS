@@ -17,9 +17,29 @@ struct ResumeApp: App {
 	}
 
 	var body: some Scene {
+		#if os(iOS)
+		WindowGroup {
+			GeometryReader { proxy in
+				ScrollView {
+					self.content
+						.compositingGroup()
+						.scaleEffect(
+							proxy.size.width / 986,
+							anchor: .topLeading)
+				}
+				.frame(
+					maxWidth: .infinity,
+					maxHeight: .infinity,
+					alignment: .center)
+			}
+		}
+		#elseif os(macOS)
 		Window("Kristian Trenskow's Resume", id: "main") {
 			ScrollView {
-				self.content
+				Group {
+					self.content
+				}
+				.frame(maxWidth: .infinity, alignment: .center)
 			}
 		}
 		.commands {
@@ -48,6 +68,7 @@ struct ResumeApp: App {
 
 			}
 		}
+		#endif
 	}
 }
 

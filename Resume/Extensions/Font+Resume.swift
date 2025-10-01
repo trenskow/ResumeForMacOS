@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+#if canImport(AppKit)
+typealias NFontDescriptor = NSFontDescriptor
+typealias NFont = NSFont
+#elseif canImport(UIKit)
+typealias NFontDescriptor = UIFontDescriptor
+typealias NFont = UIFont
+#endif
+
 extension Font {
 
 	@MainActor
@@ -57,14 +65,14 @@ extension Font {
 					var fileWeights: [FontWeight: String] = [:]
 
 					let descriptors = (CTFontManagerCreateFontDescriptorsFromURL(url as CFURL) as! [CTFontDescriptor])
-						.map { $0 as NSFontDescriptor }
+						.map { $0 as NFontDescriptor }
 
 					descriptors.forEach { descriptor in
 
-						guard let traits = descriptor.object(forKey: .traits) as? [NSFontDescriptor.TraitKey: Any]
+						guard let traits = descriptor.object(forKey: .traits) as? [NFontDescriptor.TraitKey: Any]
 						else { return }
 
-						guard let weight = traits[.weight] as? NSFont.Weight
+						guard let weight = traits[.weight] as? NFont.Weight
 						else { return }
 
 						fileWeights[FontWeight.closest(
