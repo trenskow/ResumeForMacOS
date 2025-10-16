@@ -40,3 +40,22 @@ extension LocalizedString.Language {
 	}
 
 }
+
+extension LocalizedString: ExpressibleByStringLiteral {
+
+	init(
+		_ value: String
+	) {
+		self.init(
+			en: value,
+			da: value)
+	}
+
+	init(
+		stringLiteral value: String
+	) {
+		self.init(
+			value)
+	}
+
+}

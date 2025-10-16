@@ -7,7 +7,7 @@
 
 extension Role.Platform {
 
-	var name: String {
+	var name: LocalizedString {
 		switch self {
 		case .iOS: return "iOS"
 		case .macOS: return "macOS"
@@ -15,9 +15,15 @@ extension Role.Platform {
 		case .watchOS: return "watchOS"
 		case .android: return "Android"
 		case .web(let framework):
-			return "\(framework.name) web frontend"
+			return LocalizedString(
+				"\(framework.name) web frontend")
 		case .backend(let stack):
-			return "\(stack.name) backend"
+			return LocalizedString(
+				"\(stack.name) backend")
+		case .documentation:
+			return LocalizedString(
+				en: "Docs",
+				da: "Doks")
 		}
 	}
 

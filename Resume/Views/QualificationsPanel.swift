@@ -64,7 +64,8 @@ struct QualificationsPanel: View {
 						title: LocalizedString(
 							en: "Stacks",
 							da: "Stacks"),
-						items: self.platforms)
+						items: self.platforms(
+							self.localizedStringLanguage))
 					.frame(width: 104)
 
 				}
@@ -138,7 +139,9 @@ extension QualificationsPanel {
 			}
 	}
 
-	var platforms: [Table.Item] {
+	func platforms(
+		_ localizedStringLanguage: LocalizedString.Language
+	) -> [Table.Item] {
 		return Project.allCases
 			.reduce([]) { partialResult, project in
 				return partialResult + project.roles
@@ -161,7 +164,7 @@ extension QualificationsPanel {
 				case .web(let framework):
 					return partialResult + [framework.name]
 				default:
-					return partialResult + [platform.name]
+					return partialResult + [platform.name[localizedStringLanguage]]
 				}
 			}
 			.reduce(

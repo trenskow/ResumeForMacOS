@@ -26,6 +26,7 @@ enum Role {
 		case android
 		case web(Framework)
 		case backend(Stack)
+		case documentation
 
 	}
 

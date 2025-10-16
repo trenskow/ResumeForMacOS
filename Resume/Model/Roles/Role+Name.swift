@@ -12,8 +12,8 @@ extension Role {
 		case .developer(let platforms):
 			if let platforms {
 				return LocalizedString(
-					en: "\(platforms.map { $0.name }.joined(separator: " & ")) developer",
-					da: "\(platforms.map { $0.name }.joined(separator: "- & "))-udvikler")
+					en: "\(platforms.map { $0.name.en }.joined(separator: " & ")) developer",
+					da: "\(platforms.map { $0.name.da }.joined(separator: "- & "))-udvikler")
 			}
 			return LocalizedString(
 				en: "Developer",
@@ -29,8 +29,8 @@ extension Role {
 		case .lead(let platforms):
 			if let platforms {
 				return LocalizedString(
-					en: "\(platforms.map { $0.name }.joined(separator: " & ")) tech lead",
-					da: "\(platforms.map { $0.name }.joined(separator: "- & "))-leder")
+					en: "\(platforms.map { $0.name.en }.joined(separator: " & ")) tech lead",
+					da: "\(platforms.map { $0.name.da }.joined(separator: "- & "))-leder")
 			}
 			return LocalizedString(
 				en: "Tech lead",

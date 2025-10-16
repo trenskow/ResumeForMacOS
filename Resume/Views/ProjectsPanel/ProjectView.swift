@@ -172,7 +172,8 @@ struct ProjectView: View {
 										.joined(separator: " | "))
 
 									Text(self.project
-										.platforms
+										.platforms(
+											self.localizedStringLanguage)
 										.joined(separator: " | "))
 
 								}
@@ -209,7 +210,9 @@ struct ProjectView: View {
 
 extension Project {
 
-	var platforms: Set<String> {
+	func platforms(
+		_ localizedStringLanguage: LocalizedString.Language
+	) -> Set<String> {
 		return Set(self.roles
 			.map { role -> [Role.Platform] in
 				switch role {
@@ -222,7 +225,7 @@ extension Project {
 				}
 			}
 			.map { role in
-				role.map { $0.name }
+				role.map { $0.name[localizedStringLanguage] }
 			}
 			.reduce([], +))
 	}
