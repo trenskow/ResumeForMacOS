@@ -38,12 +38,12 @@ extension Project {
 				""")
 		case .theBirds: return LocalizedString(
 			en: """
-			This is the first full website I ever did. I did both backend and frontend development.
-			The backend was a Strapi headless CMS, which the client uses to setup all content of the site. The site is comprised of a different component types that can be put together to make a page.
-			The frontend is written entirely in Svelte 5 – with SvelteKit underneath. Svelte was an amazing experience to work with – having worked with also React, Svelte makes web development so much more exciting!
-			The design was done by DAY21. They did an amazing job and to be honest I think the usage of Svelte and their design really came through as an amazing result!
-			Visit: fuglevaernsfonden.dk
-			""",
+				This is the first full website I ever did. I did both backend and frontend development.
+				The backend was a Strapi headless CMS, which the client uses to setup all content of the site. The site is comprised of a different component types that can be put together to make a page.
+				The frontend is written entirely in Svelte 5 – with SvelteKit underneath. Svelte was an amazing experience to work with – having worked with also React, Svelte makes web development so much more exciting!
+				The design was done by DAY21. They did an amazing job and to be honest I think the usage of Svelte and their design really came through as an amazing result!
+				Visit: fuglevaernsfonden.dk
+				""",
 			da: """
 				Dette er den første fulde hjemmeside, jeg nogensinde har lavet. Jeg stod for både backend- og frontend-udviklingen.
 				Backenden er et Strapi headless CMS, som kunden bruger til at opsætte alt indhold på siden. Hjemmesiden består af forskellige komponenttyper, der kan sammensættes for at danne en side.
@@ -62,7 +62,7 @@ extension Project {
 		case .reliefV2: return LocalizedString(
 			en: """
 				In fall of 2023 I assisted GN Hearing A/S in getting their Relief app updated on iOS. The app hadn’t been updated for a whil, so it needed some work to get it to build on the newest hardware and Xcode version.
-			""",
+				""",
 			da: """
 				I efteråret 2023 hjalp jeg GN Hearing A/S med at få opdateret deres Relief-app til iOS. Appen havde ikke været opdateret i et stykke tid, så der skulle lidt arbejde til for at få den til at bygge på den nyeste hardware og Xcode-version.
 				""")
