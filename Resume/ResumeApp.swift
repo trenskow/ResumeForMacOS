@@ -11,6 +11,8 @@ import UniformTypeIdentifiers
 @main
 struct ResumeApp: App {
 
+	@State private var localizedStringLanguage: LocalizedString.Language = .en
+
 	private var content: some View {
 		ContentView()
 			.foregroundStyle(.black)
@@ -39,8 +41,21 @@ struct ResumeApp: App {
 				Group {
 					self.content
 				}
-				.frame(maxWidth: .infinity, alignment: .center)
+				.frame(
+					maxWidth: .infinity,
+					alignment: .center)
 			}
+			.toolbar {
+				Picker("Language", selection: self.$localizedStringLanguage) {
+					ForEach(LocalizedString.Language.allCases, id: \.self) { language in
+						Text(language.flag)
+							.tag(language)
+					}
+				}
+			}
+			.environment(
+				\.localizedStringLanguage,
+				 self.localizedStringLanguage)
 		}
 		.commands {
 			CommandMenu("Actions") {
@@ -59,7 +74,8 @@ struct ResumeApp: App {
 
 						await self.content
 							.saveAsPDF(
-								url: url)
+								url: url,
+								localizedStringLanguage: self.localizedStringLanguage)
 
 						NSWorkspace.shared.open(url)
 
@@ -72,3 +88,13 @@ struct ResumeApp: App {
 	}
 }
 
+struct LocalizedStringLanguageEnvironmentKey: EnvironmentKey {
+	static let defaultValue: LocalizedString.Language = .en
+}
+
+extension EnvironmentValues {
+	var localizedStringLanguage: LocalizedString.Language {
+		get { self[LocalizedStringLanguageEnvironmentKey.self] }
+		set { self[LocalizedStringLanguageEnvironmentKey.self] = newValue }
+	}
+}

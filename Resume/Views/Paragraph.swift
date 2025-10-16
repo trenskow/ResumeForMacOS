@@ -9,19 +9,18 @@ import SwiftUI
 
 struct Paragraph: View {
 
-	let text: AttributedString
+	@Environment(\.localizedStringLanguage) private var localizedStringLanguage
+
+	let text: LocalizedString
 
 	init(
-		text: String
+		text: LocalizedString
 	) {
-		var attributedText = AttributedString(text
-			.replacingOccurrences(of: "\n", with: "\n\n"))
-		attributedText.foregroundColor = .black
-		self.text = attributedText
+		self.text = text
 	}
 
 	var body: some View {
-		Text(self.text)
+		Text(self.attributedString)
 			.multilineTextAlignment(.leading)
 			.fixedSize(
 				horizontal: false,
@@ -32,6 +31,13 @@ struct Paragraph: View {
 						14,
 						weight: .regular))
 			.foregroundStyle(.black)
+	}
+
+	private var attributedString: AttributedString {
+		var attributedText = AttributedString(text[self.localizedStringLanguage]
+			.replacingOccurrences(of: "\n", with: "\n\n"))
+		attributedText.foregroundColor = .black
+		return attributedText
 	}
 
 }

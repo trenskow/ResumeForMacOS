@@ -32,12 +32,19 @@ extension Client {
 		}
 	}
 
-	var associatedName: String? {
+	func associatedName(
+		for localizedStringLanguage: LocalizedString.Language
+	) -> String? {
+
+		guard localizedStringLanguage == .en
+		else { return nil }
+
 		switch self {
 		case .folketinget: return "The Danish Parliament"
 		case .dr: return "Danish Broadcasting Corporation"
 		default: return nil
 		}
+
 	}
 
 }

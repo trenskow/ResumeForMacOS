@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProjectView: View {
 
+	@Environment(\.localizedStringLanguage) private var localizedStringLanguage
+
 	let project: Project
 
 	init(
@@ -37,12 +39,15 @@ struct ProjectView: View {
 								36,
 								weight: .light))
 					Group {
-						Text(self.project.timespan.month.name.uppercased())
+						LocalizedText(self.project.timespan.month.name, { $0.uppercased() })
 							.font(.resume.workSans
 								.sized(
 									12,
 									weight: .bold))
-						Text("\(self.project.timespan.durationMonths) months")
+						LocalizedText(
+							LocalizedString(
+								en: "\(self.project.timespan.durationMonths) months",
+								da: "\(self.project.timespan.durationMonths) måneder"))
 							.font(.resume.workSans
 								.sized(
 									12,
@@ -72,13 +77,15 @@ struct ProjectView: View {
 							spacing: 3
 						) {
 
-							Text("ME")
+							LocalizedText(LocalizedString(
+								en: "ME",
+								da: "MIG"))
 								.font(.resume.workSans
 									.sized(
 										12,
 										weight: .bold))
 							Text("|")
-							Text(self.project.roles.map { $0.name }.joined(separator: " | ") )
+							Text(self.project.roles.map { $0.name[self.localizedStringLanguage] }.joined(separator: " | ") )
 
 						}
 						.font(.resume.workSans
@@ -111,16 +118,29 @@ struct ProjectView: View {
 								) {
 
 									if self.project.technologies != nil {
-										Text("Techonolgies".uppercased())
+										LocalizedText(
+											LocalizedString(
+												en: "Techonolgies".uppercased(),
+												da: "Teknologier".uppercased()))
 									}
 
-									Text("Languages".uppercased())
-									Text("Platforms".uppercased())
+									LocalizedText(
+										LocalizedString(
+											en: "Languages".uppercased(),
+											da: "Sprog".uppercased()))
+
+									LocalizedText(
+										LocalizedString(
+											en: "Stacks".uppercased(),
+											da: "Stacks".uppercased()))
 
 								}
 
 								if self.project.contractor != nil {
-									Text("Contractor".uppercased())
+									LocalizedText(
+										LocalizedString(
+											en: "Contractor".uppercased(),
+											da: "Bureau".uppercased()))
 								}
 
 							}
@@ -224,14 +244,17 @@ extension ProjectView {
 						36,
 						weight: .bold))
 
-			Text("for \(self.project.client.name ?? "myself")")
+			LocalizedText(
+				LocalizedString(
+					en: "for \(self.project.client.name ?? "myself")",
+					da: "for \(self.project.client.name ?? "eget projekt")"))
 				.font(.resume.urbanist
 					.sized(
 						36,
 						weight: .light))
 				.opacity(self.project.client.name == nil ? 0.25 : 1.0)
 
-			if let associatedName = self.project.client.associatedName {
+			if let associatedName = self.project.client.associatedName(for: self.localizedStringLanguage) {
 				Text("(\(associatedName))")
 					.font(.resume.urbanist
 						.sized(
@@ -245,7 +268,6 @@ extension ProjectView {
 	}
 
 }
-
 
 #Preview {
 	ProjectView(project: .issuu)

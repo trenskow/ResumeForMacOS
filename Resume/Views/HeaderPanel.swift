@@ -78,7 +78,9 @@ struct HeaderPanel: View {
 						Text("iOS & Developer")
 						Text("Tech Lead")
 						Text("Staff Engineer")
-						Text("Architect")
+						LocalizedText(LocalizedString(
+							en: "Architect",
+							da: "Arkitekt"))
 					}
 					.foregroundStyle(Color.white.opacity(0.5))
 					.font(.resume.urbanist.sized(

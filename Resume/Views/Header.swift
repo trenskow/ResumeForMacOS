@@ -9,12 +9,12 @@ import SwiftUI
 
 struct Header: View {
 
-	let text: String
-	let additionalText: String?
+	let text: LocalizedString
+	let additionalText: LocalizedString?
 
 	init(
-		text: String,
-		additionalText: String? = nil
+		text: LocalizedString,
+		additionalText: LocalizedString? = nil
 	) {
 		self.text = text
 		self.additionalText = additionalText
@@ -26,7 +26,7 @@ struct Header: View {
 			spacing: 8
 		) {
 
-			Text(self.text)
+			LocalizedText(self.text)
 				.font(.resume.urbanist
 					.sized(
 						36,
@@ -34,7 +34,7 @@ struct Header: View {
 
 			if let additionalText = self.additionalText {
 
-				Text(additionalText)
+				LocalizedText(additionalText)
 					.font(.resume.urbanist
 						.sized(
 							14,

@@ -11,6 +11,8 @@ import SwiftUI
 
 struct QualificationsPanel: View {
 
+	@Environment(\.localizedStringLanguage) fileprivate var localizedStringLanguage
+
 	var body: some View {
 		Panel {
 			VStack(
@@ -19,8 +21,12 @@ struct QualificationsPanel: View {
 			) {
 
 				Header(
-					text: "Technologies, Tools",
-					additionalText: "& project count")
+					text: LocalizedString(
+						en: "Technologies, Tools",
+						da: "Teknologier, Værktøjer"),
+					additionalText: LocalizedString(
+						en: "& project count",
+						da: "& projektantal"))
 
 				HStack(
 					alignment: .top,
@@ -28,28 +34,36 @@ struct QualificationsPanel: View {
 				) {
 
 					Table(
-						title: "Roles",
+						title: LocalizedString(
+							en: "Roles",
+							da: "Roller"),
 						items: self.roles)
 					.frame(width: 100)
 
 					Spacer()
 
 					Table(
-						title: "Technologies",
+						title: LocalizedString(
+							en: "Technologies",
+							da: "Teknologier"),
 						items: self.technologies)
 					.frame(width: 160)
 
 					Spacer()
 
 					Table(
-						title: "Languages",
+						title: LocalizedString(
+							en: "Languages",
+							da: "Sprog"),
 						items: self.languages)
 					.frame(width: 119)
 
 					Spacer()
 
 					Table(
-						title: "Platforms",
+						title: LocalizedString(
+							en: "Stacks",
+							da: "Stacks"),
 						items: self.platforms)
 					.frame(width: 104)
 
@@ -76,7 +90,7 @@ extension QualificationsPanel {
 					.reduce(
 						into: partialResult
 					) { partialResult, role in
-						partialResult[role.shortName, default: 0] += 1
+						partialResult[role.shortName[self.localizedStringLanguage], default: 0] += 1
 					}
 			}
 			.map { key, value in

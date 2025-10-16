@@ -14,11 +14,11 @@ struct Table: View {
 		let count: Int
 	}
 
-	let title: String
+	let title: LocalizedString
 	let items: [Item]
 
 	init(
-		title: String,
+		title: LocalizedString,
 		items: [Item]
 	) {
 		self.title = title
@@ -70,7 +70,9 @@ struct Table: View {
 
 #Preview {
 	Table(
-		title: "Roles",
+		title: LocalizedString(
+			en: "Roles",
+			da: "Roller"),
 		items: [
 			Table.Item(title: "Test 1", count: 1),
 			Table.Item(title: "Test 2", count: 2)

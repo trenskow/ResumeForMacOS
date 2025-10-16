@@ -17,8 +17,12 @@ struct ClientsPanel: View {
 			) {
 
 				Header(
-					text: "Clients",
-					additionalText: "(Selected)")
+					text: LocalizedString(
+						en: "Clients",
+						da: "Kunder"),
+					additionalText: LocalizedString(
+						en: "(Selected)",
+						da: "(Udvalgte)"))
 
 				VStack(
 					spacing: 30

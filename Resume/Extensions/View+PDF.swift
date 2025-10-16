@@ -11,14 +11,16 @@ extension View {
 
 	func saveAsPDF(
 		url: URL,
-		rasterizationScale: CGFloat = 1
+		rasterizationScale: CGFloat = 1,
+		localizedStringLanguage: LocalizedString.Language
 	) async {
 
 		await withCheckedContinuation { completion in
 
 			let renderer = ImageRenderer(
 				content: self
-					.environment(\.colorScheme, .light))
+					.environment(\.colorScheme, .light)
+					.environment(\.localizedStringLanguage, localizedStringLanguage))
 
 			renderer.render(
 				rasterizationScale: rasterizationScale

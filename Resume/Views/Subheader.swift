@@ -9,16 +9,16 @@ import SwiftUI
 
 struct Subheader: View {
 
-	let text: String
+	let text: LocalizedString
 
 	init(
-		text: String
+		text: LocalizedString
 	) {
 		self.text = text
 	}
 
 	var body: some View {
-		Text(self.text)
+		LocalizedText(self.text)
 			.font(.resume.urbanist
 				.sized(
 					24,

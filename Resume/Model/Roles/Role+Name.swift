@@ -7,31 +7,47 @@
 
 extension Role {
 
-	var name: String {
+	var name: LocalizedString {
 		switch self {
 		case .developer(let platforms):
 			if let platforms {
-				return "\(platforms.map { $0.name }.joined(separator: " & ")) developer"
+				return LocalizedString(
+					en: "\(platforms.map { $0.name }.joined(separator: " & ")) developer",
+					da: "\(platforms.map { $0.name }.joined(separator: "- & "))-udvikler")
 			}
-			return "Developer"
+			return LocalizedString(
+				en: "Developer",
+				da: "Udvikler")
 		case .designer:
-			return "UI/UX"
+			return LocalizedString(
+				en: "UI/UX",
+				da: "UI/UX")
 		case .architect:
-			return "Architect"
+			return LocalizedString(
+				en: "Architect",
+				da: "Arkitekt")
 		case .lead(let platforms):
 			if let platforms {
-				return "\(platforms.map { $0.name }.joined(separator: " & ")) tech lead"
+				return LocalizedString(
+					en: "\(platforms.map { $0.name }.joined(separator: " & ")) tech lead",
+					da: "\(platforms.map { $0.name }.joined(separator: "- & "))-leder")
 			}
-			return "Tech lead"
+			return LocalizedString(
+				en: "Tech lead",
+				da: "Leder")
 		}
 	}
 
-	var shortName: String {
+	var shortName: LocalizedString {
 		switch self {
 		case .developer:
-			return "Developer"
+			return LocalizedString(
+				en: "Developer",
+				da: "Udvikler")
 		case .lead:
-			return "Tech lead"
+			return LocalizedString(
+				en: "Tech lead",
+				da: "Leder")
 		default:
 			return self.name
 		}
