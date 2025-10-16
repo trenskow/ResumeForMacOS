@@ -27,6 +27,7 @@ enum Role {
 		case web(Framework)
 		case backend(Stack)
 		case documentation
+		case unitTests
 
 	}
 

@@ -24,7 +24,12 @@ struct Table: View {
 		self.title = title
 		self.items = items
 			.sorted { item1, item2 in
+
+				guard item1.count != item2.count
+				else { return item1.title < item2.title }
+
 				return item1.count > item2.count
+
 			}
 	}
 

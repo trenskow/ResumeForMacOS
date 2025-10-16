@@ -24,6 +24,10 @@ extension Role.Platform {
 			return LocalizedString(
 				en: "Docs",
 				da: "Doks")
+		case .unitTests:
+			return LocalizedString(
+				en: "Unit tests",
+				da: "Unit tests")
 		}
 	}
 
