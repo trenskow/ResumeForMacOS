@@ -5,15 +5,15 @@ This is my resume as a macOS application.
 
 # How it works
 
-You basically just donwload the sources, run them in Xcode and then you see the CV.
+You basically just download the sources, run them in Xcode and then you see the CV.
 
 > The resume can be exported to PDF from the app.
 
 # Why?
 
-Just why did I do it. It seems like a pretty wierd idea.
+Just why did I do it. It seems like a pretty weird idea.
 
-Well, it came down to a practical problem I had with Figma. Figma's PDF exporter is fundamentally broken. Figma doesn't export text when exporting to PDF – instead it converts the texts to vector outlines and then it exports it. That means the file size becomes enourmous, which is not ideal when most places that accept your resume only accepts a couple of megabytes.
+Well, it came down to a practical problem I had with Figma. Figma's PDF exporter is fundamentally broken. Figma doesn't export text when exporting to PDF – instead it converts the texts to vector outlines and then it exports it. That means the file size becomes enormous, which is not ideal when most places that accept your resume only accepts a couple of megabytes.
 
 So I was wondering how to fix it. I had spend the time creating it all in Figma. I though about redoing it in Sketch because I know from experience that it generates proper PDFs. But I also didn't want to pay a subscription just to export a PDF.
 
