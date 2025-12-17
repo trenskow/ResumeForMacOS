@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct QualificationsPanel: View {
 
 	@Environment(\.localizedStringLanguage) fileprivate var localizedStringLanguage

@@ -18,6 +18,8 @@ struct Timeline: View {
 
 	}
 
+	@Environment(\.renderContext) var renderContext
+
 	@DataAsset(name: "Data/NeedleHeadBlack")
 	private var needleHeadBlack: Data
 
@@ -42,10 +44,10 @@ struct Timeline: View {
 					height: 68)
 				.clipShape(
 					.rect(
-						topLeadingRadius: 0,
+						topLeadingRadius: self.renderContext == .screen ? 0 : 2,
 						bottomLeadingRadius: 2,
 						bottomTrailingRadius: 2,
-						topTrailingRadius: 0
+						topTrailingRadius: self.renderContext == .screen ? 0 : 2
 					))
 				.foregroundStyle(
 					self.parts.contains(.top) ? Color.black : Color.clear
@@ -65,8 +67,8 @@ struct Timeline: View {
 				.clipShape(
 					.rect(
 						topLeadingRadius: 2,
-						bottomLeadingRadius: 0,
-						bottomTrailingRadius: 0,
+						bottomLeadingRadius: self.renderContext == .screen ? 0 : 2,
+						bottomTrailingRadius: self.renderContext == .screen ? 0 : 2,
 						topTrailingRadius: 2
 					))
 				.foregroundStyle(

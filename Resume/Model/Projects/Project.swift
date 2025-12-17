@@ -34,3 +34,17 @@ enum Project: CaseIterable {
 	case airfloat
 	case auFind
 }
+
+extension Project {
+
+	static var timeline: [Project] {
+		return Project.allCases
+			.sorted { project1, project2 in
+				if project1.timespan.year == project2.timespan.year {
+					return project1.timespan.month.rawValue > project2.timespan.month.rawValue
+				}
+				return project1.timespan.year > project2.timespan.year
+			}
+	}
+
+}

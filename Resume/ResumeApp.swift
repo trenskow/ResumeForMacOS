@@ -72,10 +72,53 @@ struct ResumeApp: App {
 							  let url = savePanel.url
 						else { return }
 
-						await self.content
-							.saveAsPDF(
-								url: url,
-								localizedStringLanguage: self.localizedStringLanguage)
+						await CGContext.pdf(
+							url: url) { pdf in
+
+								await HeaderPanel()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+								await ContactLine()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+								await ClientsPanel()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+								await QualificationsPanel()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+								await ProjectsHeader()
+									.projectLayout()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+								let timeline = Project.timeline
+
+								for project in timeline {
+									await ProjectView(
+										project: project)
+										.projectLayout()
+										.renderLaidOutPage(
+											toPDF: pdf,
+											localizedStringLanguage: self.localizedStringLanguage)
+								}
+
+								await ProjectsFooter()
+									.projectLayout()
+									.renderLaidOutPage(
+										toPDF: pdf,
+										localizedStringLanguage: self.localizedStringLanguage)
+
+							}
 
 						NSWorkspace.shared.open(url)
 

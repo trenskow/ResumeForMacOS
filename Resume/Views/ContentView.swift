@@ -15,14 +15,7 @@ struct ContentView: View {
 
 			HeaderPanel()
 
-			Text(
-				verbatim: "this.is@kristians.email | +45 26 66 22 37")
-				.font(
-					.resume.workSans
-						.sized(
-							16,
-							weight: .light))
-				.foregroundStyle(.black)
+			ContactLine()
 
 			ClientsPanel()
 
