@@ -34,6 +34,7 @@ extension Project {
 		case .theBirds: return "Website"
 		case .threeShape: return "3Shape"
 		case .tinget: return "Tinget"
+		case .zeroBitGames: return "0-bit Games"
 		}
 	}
 

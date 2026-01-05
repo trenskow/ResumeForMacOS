@@ -36,6 +36,7 @@ extension Project {
 		case .spotable: return [.uiKit]
 		case .airfloat: return [.uiKit]
 		case .auFind: return [.uiKit]
+		case .zeroBitGames: return [.uiKit, .androidSDK, .compose, .swiftUI, .uiKit]
 		}
 	}
 

@@ -6,6 +6,7 @@
 //
 
 enum Project: CaseIterable {
+	case zeroBitGames
 	case threeShape
 	case huligennem
 	case cph

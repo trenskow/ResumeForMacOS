@@ -59,6 +59,7 @@ extension Project {
 		case .theBirds: return .init(year: 2024, month: .april, durationMonths: 6)
 		case .threeShape: return .init(year: 2024, month: .october, durationMonths: 5)
 		case .tinget: return .init(year: 2022, month: .august, durationMonths: 4)
+		case .zeroBitGames: return .init(year: 2025, month: .may, durationMonths: 8)
 		}
 	}
 

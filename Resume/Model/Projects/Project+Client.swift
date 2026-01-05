@@ -36,6 +36,7 @@ extension Project {
 		case .theBirds: return .theBirds
 		case .threeShape: return .threeShape
 		case .tinget: return .folketinget
+		case .zeroBitGames: return .me
 		}
 	}
 

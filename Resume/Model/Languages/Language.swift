@@ -9,8 +9,10 @@ enum Language: CaseIterable {
 	case swift
 	case kotlin
 	case c
+	case cpp
 	case java
 	case typeScript
 	case javaScript
 	case objectiveC
+	case lua
 }

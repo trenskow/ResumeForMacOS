@@ -36,6 +36,7 @@ extension Project {
 		case .spotable: return [.architect, .designer, .developer([.iOS])]
 		case .airfloat: return [.architect, .designer, .developer([.iOS])]
 		case .auFind: return [.architect, .designer, .developer([.iOS, .backend(.node)])]
+		case .zeroBitGames: return [.architect, .designer, .developer([.iOS, .android, .backend(.node)])]
 		}
 	}
 

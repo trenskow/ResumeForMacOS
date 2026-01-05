@@ -9,6 +9,24 @@ extension Project {
 
 	var description: LocalizedString {
 		switch self {
+		case .zeroBitGames: return LocalizedString(
+			en: """
+				Since April I’ve been working on my own project – 0-bit Games. 0-bit Games is a project that was mostly born out of experimentation. It’s a 2D game engine with accompanying server. Games are implemented in Lua and uploaded to a server whereas they are available to be played by anyone in an apps. Sort of like Roblox, but with a different kind of games.
+				The game engine is written in C++, but being utilized more like “C with Classes” using a custom written “standard library” that is capable of bridging more easily to other languages. The game engine itself is written using this “standard library”. The engine is wrapped in a C API which is annotated in a way that enables a script to automatically create bridging libraries for Swift, Kotlin, JavaScript (Node.js API and Emscripten variants).
+				The backend is a completely self written stack. The backend is written in JavaScript in Node.js, but it only uses PostgreSQL and Redis as storage services – everything else is written by me. All to custom user authentication, data caching, localization and even the HTTP routing framework is written from scratch. The backend uses the generated Node.js API bridge to interface the engine.
+				For users to develop games I’ve made a Visual Studio Code extension that allows you to write the games in Lua. That extension also allows you to test the games. The Visual Studio Code extension uses the generated JS Emscripten bindings to interface the engine.
+				The apps are implemented using the Swift and Kotlin engine bridges. An app has been written both iOS and Android and they are both written natively in respectively SwiftUI and Compose. The engine is interfaces using the generated Swift and Kotlin bridges.
+				Finally there is a website that has been written using Svelte 5. 0-bit Games is still unreleased but a release is planned.
+				""",
+			da: """
+				Siden april har jeg arbejdet på mit eget projekt – 0-bit Games. 0-bit Games er et projekt, som i høj grad er opstået ud af eksperimentering. Det er en 2D-spilmotor med tilhørende server. Spillene implementeres i Lua og uploades til en server, hvor de bliver tilgængelige for alle via apps. Det kan sammenlignes med Roblox, men med en anden type spil.
+				Spilmotoren er skrevet i C++, men anvendes mere som “C med klasser” ved brug af et specialskrevet “standardbibliotek”, som gør det lettere at bygge bro til andre programmeringssprog. Selve spilmotoren er skrevet ved hjælp af dette “standardbibliotek”. Motoren er pakket ind i et C-API, som er annoteret på en måde, der gør det muligt for et script automatisk at generere bindingsbiblioteker til Swift, Kotlin og JavaScript (både Node.js-API og Emscripten-varianter).
+				Backend-delen er en fuldstændig egenudviklet stack. Backenden er skrevet i JavaScript i Node.js, men bruger kun PostgreSQL og Redis som lagringstjenester – alt andet er skrevet af mig selv. Alt fra brugerautentifikation, datacaching og lokalisering til selve HTTP-routing-frameworket er udviklet fra bunden. Backenden anvender den genererede Node.js-API-binding til at kommunikere med spilmotoren.
+				For at brugere kan udvikle spil har jeg lavet en Visual Studio Code-udvidelse, som gør det muligt at skrive spillene i Lua. Udvidelsen gør det også muligt at teste spillene. Visual Studio Code-udvidelsen bruger de genererede JavaScript-Emscripten-bindings til at interagere med spilmotoren.
+				Selve appsene er implementeret ved hjælp af Swift- og Kotlin-bindingerne til motoren. Der er udviklet en app til både iOS og Android, og de er begge skrevet nativt i henholdsvis SwiftUI og Compose. Spilmotoren tilgås via de genererede Swift- og Kotlin-bindings.
+				Derudover findes der en hjemmeside, som er skrevet i Svelte 5. 0-bit Games er endnu ikke udgivet, men en lancering er planlagt.
+				"""
+		)
 		case .threeShape: return LocalizedString(
 			en: """
 				There is really not that much to say about this project at this point as it is not released.

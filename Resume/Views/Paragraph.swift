@@ -20,17 +20,24 @@ struct Paragraph: View {
 	}
 
 	var body: some View {
-		Text(self.attributedString)
-			.multilineTextAlignment(.leading)
-			.fixedSize(
-				horizontal: false,
-				vertical: true)
-			.font(
-				Font.resume.workSans
-					.sized(
-						14,
-						weight: .regular))
-			.foregroundStyle(.black)
+		VStack(
+			alignment: .leading,
+			spacing: 20
+		) {
+			ForEach(self.text[self.localizedStringLanguage].split(separator: "\n"), id: \.self) { text in
+				Text(text)
+					.multilineTextAlignment(.leading)
+					.fixedSize(
+						horizontal: false,
+						vertical: true)
+					.font(
+						Font.resume.workSans
+							.sized(
+								14,
+								weight: .regular))
+					.foregroundStyle(.black)
+			}
+		}
 	}
 
 	private var attributedString: AttributedString {
